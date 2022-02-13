@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    build: ./mysql
+    volumes:
+      - ${DATA_SAVE_PATH}/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "${MYSQL_PORT}:3306"
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    build: ./redis
+    volumes:
+      - ${DATA_SAVE_PATH}/redis:/data
+    ports:
+      - "${REDIS_PORT}:6379"
+    restart: always
