@@ -1,5 +1,5 @@
 # MySQL x Redis
-    - a simple docker compose to up and running MySQL and Redis.
+a simple docker compose to up and running MySQL and Redis.
 
 ## How to import .sql file to MySQL
 
