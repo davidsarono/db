@@ -2,7 +2,6 @@ version: '3'
 
 services:
   mysql:
-    image: mysql:latest
     container_name: mysql
     build: ./mysql
     volumes:
@@ -17,7 +16,6 @@ services:
     command: --default-authentication-plugin=mysql_native_password
 
   redis:
-    image: redis:latest
     container_name: redis
     build: ./redis
     volumes:
